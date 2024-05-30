@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Jumbotron, Container, Card, Button, Row, Col } from 'react-bootstrap';
+import { Container, Card, Button, Row, Col } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_ME } from '../graphql/queries';
 import { REMOVE_BOOK } from '../graphql/mutations';
@@ -12,7 +12,6 @@ const SavedBooks = () => {
 
   const userData = data?.me || {};
 
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -23,29 +22,27 @@ const SavedBooks = () => {
     try {
       await removeBook({
         variables: { bookId },
-        });
+      });
 
-        removeBookId(bookId);
-
+      removeBookId(bookId);
     } catch (err) {
       console.error(err);
     }
   };
 
-  // if data isn't here yet, say so
   if (loading) {
     return <h2>LOADING...</h2>;
   }
 
   return (
     <>
-      <Jumbotron fluid className='text-light bg-dark'>
+      <div className='text-light bg-dark p-5'>
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>
-      </Jumbotron>
+      </div>
       <Container>
-        <h2>
+        <h2 className='pt-5'>
           {userData.savedBooks?.length
             ? `Viewing ${userData.savedBooks.length} saved ${
                 userData.savedBooks.length === 1 ? 'book' : 'books'
