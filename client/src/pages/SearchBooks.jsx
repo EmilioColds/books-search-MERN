@@ -3,7 +3,7 @@ import { Container, Col, Form, Button, Card, Row } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
-import { SAVE_BOOK } from '../graphql/mutations';
+import { SAVE_BOOK } from '../utils/mutations';
 
 const SearchBooks = () => {
   const [searchedBooks, setSearchedBooks] = useState([]);
