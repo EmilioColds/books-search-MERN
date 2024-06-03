@@ -1,6 +1,6 @@
 ## Introduction
 
-
+For this challenge, my task was to refactor an initial RESTful API code to a GraphQL API code with an Apollo Server. This is accomplish by following the MERN stack structure with a React frontend, MongoDB database and Node.js/Express.js server. The main objectives of the challenge are the following: 
 
 ## User Story
 
@@ -46,3 +46,6 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ## Links
 
+GitHub Repo: https://github.com/EmilioColds/books-search-MERN
+
+Deployed App: 
